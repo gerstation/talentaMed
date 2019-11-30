@@ -28,7 +28,6 @@ class TalentaMed(object):
             regiones = Region.objects.all()
         except ObjectDoesNotExist:
             regiones = None
-        print("#"*100)
         data = {
             'municipios': municipios,
             'regiones': regiones

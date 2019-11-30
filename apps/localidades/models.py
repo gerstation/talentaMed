@@ -35,6 +35,8 @@ class Municipio(models.Model):
     def __unicode__(self):
         return self.texto
 
+    def __str__(self):
+        return self.texto
 
 
 class Region(models.Model):
@@ -57,4 +59,7 @@ class Region(models.Model):
         verbose_name_plural = (u"Regiones")
     
     def __unicode__(self):
+        return self.texto
+    
+    def __str__(self):
         return self.texto

@@ -135,13 +135,13 @@ class RegionDeleteFormView(DeleteView):
 
 class MunicipioUpdateFormView(UpdateView):
     model = Municipio
+    form_class = MunicipioForm
     success_url = reverse_lazy('municipios')
-    fields = ['codigo', 'texto', 'activo']
     template_name = 'form.html'
 
 class RegionUpdateFormView(UpdateView):
     model = Region
+    form_class = RegionForm
     success_url = reverse_lazy('regiones')
-    fields = ['codigo', 'texto', 'municipio']
     template_name = 'form.html'
     

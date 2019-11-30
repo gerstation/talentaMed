@@ -1,6 +1,4 @@
 # coding: utf-8
-import urllib
-import urllib2
 import json
 import re
 from django import forms
@@ -38,7 +36,8 @@ class RegionForm(forms.ModelForm):
         model = Region
         fields = [
             'codigo',
-            'texto'
+            'texto',
+            'municipio'
         ]
     def __init__(self, *args, **kwargs):
         self.request = kwargs.pop('request', None)

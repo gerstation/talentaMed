@@ -13,12 +13,19 @@ class MunicipioAdmin(admin.ModelAdmin):
     }]]
 
 class RegionAdmin(admin.ModelAdmin):
-    fieldsets = [[
-        ('Básico'), {
-        'fields': (
-            'codigo', 'texto', 'municipio'
-        )
-    }]]
+    filter_horizontal = ('municipio',)
+    fieldsets = [
+        [
+            ('Básico'), {
+            'fields': (
+                'codigo', 'texto'
+            )
+        }],
+        [
+            ('Configuración municipal'), {
+                'fields': ('municipio',)
+        }],
+    ]
 
 admin.site.register(Municipio, MunicipioAdmin)
 admin.site.register(Region, RegionAdmin)

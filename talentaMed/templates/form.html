@@ -1,0 +1,34 @@
+{% extends 'base.html' %}
+{% block contenido %}
+    {% if request.resolver_match.url_name not in "home,detail_municipio,detail_region" %}    
+        {% if "municipios" in request.path %}
+            <h5 class="section-title h1">AÑADIR MUNICIPIOS</h5>
+        {% elif "regiones" in request.path %}
+            <h5 class="section-title h1">AÑADIR REGIONES</h5>
+        {% endif %}
+        <form role="form" action="" method="post" enctype="multipart/form-data" >
+            {% csrf_token %}
+                {% for hidden in form.hidden_fields %}
+                        {{hidden}}
+                    {% endfor %}
+            <div class="row">
+                <ul class="form campos campos1 wedding-booking__form-list">
+                    {% for field in form.visible_fields %}
+                    <li class="form-group wedding-booking__form-item {{ field.name }} ">
+                        {{ field.label }}
+                        {{ field }}
+                    </li>
+                    {% endfor %}
+                </ul>
+            </div>
+            <div class="rowb">
+                <ul>
+                    <li class="form-group checkbox accionFormulario">
+                        <button type="submit" class="btn btn-primario btn-primary"
+                                itemprop="potentialAction">Enviar</button>
+                    </li>
+                </ul>
+            </div>
+        </form>
+    {% endif %}
+{% endblock contenido %}

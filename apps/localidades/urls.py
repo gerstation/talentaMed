@@ -10,5 +10,5 @@ urlpatterns = [
     url(r'^regiones/$', HomeRegionView.as_view(), name="regiones"),
     url(r'^add-regiones/$', RegionFormView.as_view(), name="add_region"),
     url(r'^delete-regiones/(?P<pk>\d+)$', RegionDeleteFormView.as_view(), name="delete_region"),
-    url(r'^update-municipios/(?P<pk>\d+)$', RegionUpdateFormView.as_view(), name="update_region"),
+    url(r'^update-region/(?P<pk>\d+)$', RegionUpdateFormView.as_view(), name="update_region"),
 ]

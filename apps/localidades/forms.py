@@ -42,6 +42,7 @@ class RegionForm(forms.ModelForm):
     def __init__(self, *args, **kwargs):
         self.request = kwargs.pop('request', None)
         super(RegionForm, self).__init__(*args, **kwargs)
+        self.fields['municipio'].queryset = Municipio.objects.filter(activo=True)
         for field_name in self.fields:
             field = self.fields.get(field_name)
             if field:

@@ -2,7 +2,7 @@
 {% block contenido %}
     {% for region in regiones %}
         <pre>
-            {{region.codigo}} ---> {{region.texto}}  --- <a href="{% url 'update_municipio' pk=region.pk %}">Editar</a> --- <a href="{% url 'delete_region' pk=region.pk %}">Eliminar</a>
+            {{region.codigo}} ---> {{region.texto}}  --- <a href="{% url 'update_region' pk=region.pk %}">Editar</a> --- <a href="{% url 'delete_region' pk=region.pk %}">Eliminar</a>
         </pre>
     {% endfor %}
     <a href="{% url 'add_region' %}">Adicionar regiones</a>

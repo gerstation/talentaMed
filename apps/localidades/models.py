@@ -23,7 +23,7 @@ class Municipio(models.Model):
         validators=[_codigo_simple_validator],
     )
     texto = models.CharField(
-        (u"Descripción"), 
+        (u"Nombre"), 
         max_length=30)
     activo = models.BooleanField(
         (u'Activo'), default=True)
@@ -32,7 +32,7 @@ class Municipio(models.Model):
         verbose_name = (u"Municipio")
         verbose_name_plural = (u"Municipios")
     
-    def __unicode_(self):
+    def __unicode__(self):
         return self.texto
 
 
@@ -46,7 +46,7 @@ class Region(models.Model):
         validators=[_codigo_simple_validator],
     )
     texto = models.CharField(
-        (u"Descripción"), 
+        (u"Nombre"), 
         max_length=30)
     municipio = models.ManyToManyField(
         Municipio, blank=True,
@@ -56,5 +56,5 @@ class Region(models.Model):
         verbose_name = (u"Región")
         verbose_name_plural = (u"Regiones")
     
-    def __unicode_(self):
+    def __unicode__(self):
         return self.texto

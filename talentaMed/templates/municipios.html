@@ -2,7 +2,7 @@
 {% block contenido %}
     {% for municipio in municipios %}
         <pre>
-            {{municipio.codigo}} ---> {{municipio.texto}}  --- <a href="{% url 'update_municipio' pk=municipio.pk %}">Editar</a> --- <a href="{% url 'delete_municipio' pk=municipio.pk %}">Eliminar</a>
+            {{municipio.codigo}} ---> {{municipio.texto}} ---> {% if municipio.activo %} ACTIVO {% else %} INACTIVO {% endif %} --- <a href="{% url 'update_municipio' pk=municipio.pk %}">Editar</a> --- <a href="{% url 'delete_municipio' pk=municipio.pk %}">Eliminar</a>
         </pre>
     {% endfor %}
     <a href="{% url 'add_municipio' %}">Adicionar municipios</a>
